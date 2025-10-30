@@ -10,12 +10,138 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
 
   const professions = [
-    { key: 'consultant', name: '경영 컨설턴트', category: 'Business Strategy', accuracy: 'medium', risk: 'medium' },
-    { key: 'accountant', name: '회계사/세무사', category: 'Finance & Tax', accuracy: 'high', risk: 'high' },
-    { key: 'lawyer', name: '변호사', category: 'Legal', accuracy: 'high', risk: 'high' },
-    { key: 'marketer', name: '마케터', category: 'Marketing', accuracy: 'medium', risk: 'low' },
-    { key: 'developer', name: '개발자', category: 'IT', accuracy: 'high', risk: 'medium' },
-    { key: 'designer', name: '디자이너', category: 'Creative', accuracy: 'medium', risk: 'low' },
+    { 
+      key: 'consultant', 
+      name: '경영 컨설턴트', 
+      name_en: 'Business Consultant',
+      category: 'Business Strategy',
+      common_tasks: [
+        '경영 전략 수립 및 실행 계획 수립',
+        '시장 조사 및 경쟁사 분석',
+        '조직 진단 및 프로세스 개선',
+        '사업 타당성 분석 및 투자 검토',
+        '성과 지표(KPI) 설계 및 모니터링'
+      ],
+      required_accuracy: 'high',
+      risk_level: 'medium',
+      key_requirements: [
+        '데이터 기반의 객관적 분석 및 논리적 근거 제시',
+        '실행 가능하고 구체적인 액션 플랜 제공',
+        '산업별 베스트 프랙티스 및 프레임워크 활용',
+        '정량적 ROI 및 재무적 임팩트 산출',
+        '리스크 요소 및 대응 방안 명시'
+      ]
+    },
+    { 
+      key: 'accountant', 
+      name: '회계사/세무사', 
+      name_en: 'Accountant/Tax Advisor',
+      category: 'Finance & Tax',
+      common_tasks: [
+        '재무제표 작성 및 분석',
+        '세무 신고 및 절세 전략 수립',
+        '회계 감사 및 내부통제 검토',
+        '회계 기준 및 세법 해석 및 적용',
+        '재무 리스크 분석 및 관리'
+      ],
+      required_accuracy: 'high',
+      risk_level: 'high',
+      key_requirements: [
+        '최신 회계기준(K-IFRS) 및 세법 완벽 준수',
+        '정확한 수치 계산 및 재무 데이터 검증',
+        '법적 근거 및 회계 기준 조항 명시',
+        '불확실한 해석은 명확히 표기하고 전문가 검토 권장',
+        '세무 리스크 및 패널티 가능성 사전 경고'
+      ]
+    },
+    { 
+      key: 'lawyer', 
+      name: '변호사', 
+      name_en: 'Lawyer',
+      category: 'Legal',
+      common_tasks: [
+        '계약서 작성 및 법률 검토',
+        '법률 자문 및 분쟁 해결 방안 제시',
+        '소송 전략 수립 및 법률 의견서 작성',
+        '컴플라이언스 검토 및 법적 리스크 평가',
+        '판례 및 법령 조사 분석'
+      ],
+      required_accuracy: 'high',
+      risk_level: 'high',
+      key_requirements: [
+        '관련 법령, 판례, 행정해석 정확히 인용',
+        '법적 리스크 및 책임 소재 명확히 표기',
+        '법률 용어의 정확한 사용 및 해석',
+        '불확실하거나 해석이 분리되는 쟁점은 반드시 명시',
+        '최종 판단은 변호사 자문 필수 문구 포함'
+      ]
+    },
+    { 
+      key: 'marketer', 
+      name: '마케터', 
+      name_en: 'Marketer',
+      category: 'Marketing',
+      common_tasks: [
+        '마케팅 캠페인 기획 및 실행',
+        '브랜드 전략 및 포지셔닝 수립',
+        '콘텐츠 제작 및 광고 카피라이팅',
+        '타겟 고객 분석 및 페르소나 설정',
+        '마케팅 성과 분석 및 ROI 측정'
+      ],
+      required_accuracy: 'medium',
+      risk_level: 'low',
+      key_requirements: [
+        '명확한 타겟 오디언스 및 고객 니즈 정의',
+        '창의적이면서도 브랜드 아이덴티티에 부합하는 메시지',
+        '일관된 브랜드 톤앤매너 유지',
+        '측정 가능한 KPI 및 성과 지표 설정',
+        '채널별 특성을 고려한 맞춤 전략'
+      ]
+    },
+    { 
+      key: 'developer', 
+      name: '개발자', 
+      name_en: 'Developer',
+      category: 'IT',
+      common_tasks: [
+        '코드 작성 및 리팩토링',
+        '시스템 아키텍처 설계',
+        '기술 문서 작성 및 코드 리뷰',
+        '버그 수정 및 성능 최적화',
+        '테스트 코드 작성 및 품질 관리'
+      ],
+      required_accuracy: 'high',
+      risk_level: 'medium',
+      key_requirements: [
+        '코딩 표준 및 베스트 프랙티스 준수',
+        '보안 취약점 및 성능 이슈 사전 고려',
+        '확장 가능하고 유지보수 용이한 구조 설계',
+        '단위 테스트 및 통합 테스트 전략 포함',
+        '명확한 기술 문서 및 주석 작성'
+      ]
+    },
+    { 
+      key: 'designer', 
+      name: '디자이너', 
+      name_en: 'Designer',
+      category: 'Creative',
+      common_tasks: [
+        'UI/UX 디자인 및 사용자 경험 설계',
+        '브랜드 아이덴티티 및 비주얼 시스템 구축',
+        '디자인 프로토타입 및 목업 제작',
+        '사용성 테스트 및 디자인 개선',
+        '디자인 가이드라인 및 스타일 가이드 작성'
+      ],
+      required_accuracy: 'medium',
+      risk_level: 'low',
+      key_requirements: [
+        '사용자 중심의 직관적인 디자인',
+        '브랜드 아이덴티티 및 비주얼 일관성 유지',
+        '접근성(Accessibility) 및 사용성 고려',
+        '최신 디자인 트렌드 및 기술 활용',
+        '명확한 디자인 의도 및 컨셉 전달'
+      ]
+    }
   ];
 
   const handleScrollTo = (sectionId: string) => {
@@ -42,7 +168,20 @@ export default function Home() {
 
     try {
       const selectedProf = professions.find(p => p.key === profession);
-      const userRequest = `직군: ${selectedProf?.name} (${selectedProf?.category})\n정확도 요구: ${selectedProf?.accuracy} / 리스크: ${selectedProf?.risk}\n\n업무: ${task}`;
+      
+      // 직업별 상세 정보를 포함한 요청 생성
+      const userRequest = {
+        profession: {
+          name: selectedProf?.name,
+          name_en: selectedProf?.name_en,
+          category: selectedProf?.category,
+          common_tasks: selectedProf?.common_tasks,
+          required_accuracy: selectedProf?.required_accuracy,
+          risk_level: selectedProf?.risk_level,
+          key_requirements: selectedProf?.key_requirements
+        },
+        task: task
+      };
       
       const response = await fetch('/api/demo', {
         method: 'POST',
@@ -264,18 +403,18 @@ export default function Home() {
                 <p className="text-sm text-slate-600 mb-3">{prof.category}</p>
                 <div className="flex gap-2">
                   <span className={`text-xs px-3 py-1 rounded-full ${
-                    prof.accuracy === 'high' ? 'bg-red-100 text-red-700' : 
-                    prof.accuracy === 'medium' ? 'bg-amber-100 text-amber-700' : 
+                    prof.required_accuracy === 'high' ? 'bg-red-100 text-red-700' : 
+                    prof.required_accuracy === 'medium' ? 'bg-amber-100 text-amber-700' : 
                     'bg-green-100 text-green-700'
                   }`}>
-                    정확도: {prof.accuracy}
+                    정확도: {prof.required_accuracy}
                   </span>
                   <span className={`text-xs px-3 py-1 rounded-full ${
-                    prof.risk === 'high' ? 'bg-red-100 text-red-700' : 
-                    prof.risk === 'medium' ? 'bg-amber-100 text-amber-700' : 
+                    prof.risk_level === 'high' ? 'bg-red-100 text-red-700' : 
+                    prof.risk_level === 'medium' ? 'bg-amber-100 text-amber-700' : 
                     'bg-green-100 text-green-700'
                   }`}>
-                    리스크: {prof.risk}
+                    리스크: {prof.risk_level}
                   </span>
                 </div>
               </div>
@@ -497,10 +636,10 @@ export default function Home() {
                   {professions.find(p => p.key === profession) && (
                     <>
                       <span className="text-xs px-3 py-1 rounded-full bg-blue-100 text-blue-700">
-                        정확도: {professions.find(p => p.key === profession)?.accuracy}
+                        정확도: {professions.find(p => p.key === profession)?.required_accuracy}
                       </span>
                       <span className="text-xs px-3 py-1 rounded-full bg-amber-100 text-amber-700">
-                        리스크: {professions.find(p => p.key === profession)?.risk}
+                        리스크: {professions.find(p => p.key === profession)?.risk_level}
                       </span>
                     </>
                   )}
