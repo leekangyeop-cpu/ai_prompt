@@ -227,7 +227,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">프롬프트 자산화</h3>
                   <p className="text-slate-600">
-                    생성된 프롬프트를 JSON으로 저장(옵션) → 재사용 가능한 "AI Prompt Asset"
+                    생성된 프롬프트를 JSON으로 저장(옵션) → 재사용 가능한 &quot;AI Prompt Asset&quot;
                   </p>
                 </div>
               </div>

@@ -220,7 +220,7 @@ export default function About() {
             <div className="bg-white p-8 rounded-xl shadow-lg">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">📚 프롬프트 자산화</h3>
               <p className="text-slate-600 leading-relaxed">
-                생성된 프롬프트를 JSON으로 저장하여 재사용 가능한 "AI Prompt Asset"으로 관리할 수 있습니다.
+                생성된 프롬프트를 JSON으로 저장하여 재사용 가능한 &quot;AI Prompt Asset&quot;으로 관리할 수 있습니다.
               </p>
             </div>
 
